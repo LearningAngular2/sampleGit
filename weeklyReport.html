@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>weekly report</title>
+	
+  </head>
+  <body>  
+  <div id="data"> </div>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCf1kkwl1HszeQw1qeQthETuanFtDN6aQs",
+    authDomain: "weeklyreport-bdc1e.firebaseapp.com",
+    databaseURL: "https://weeklyreport-bdc1e.firebaseio.com",
+    projectId: "weeklyreport-bdc1e",
+    storageBucket: "",
+    messagingSenderId: "491043463849"
+  };
+  firebase.initializeApp(config);
+  
+ // var data = document.getElementById('data');
+  //var dbRef = firebase.database()
+  //console.log(dbRef);
+  //var dbRef = firebase.database().ref().child('userTable');
+	//dbRef.on('value', snap =>data.innerText = snap.val());
+	
+var ref = firebase.database().ref();
+
+ref.on("value", function(snapshot) {
+console.log(snapshot.val());
+}, function (error) {
+console.log("Error: " + error.code);
+});
+
+//https://weeklyreport-bdc1e.firebaseio.com/
+
+var playersRef = firebase.database().ref("projectTable/");
+
+playersRef.update ({
+   project4: {
+      projectId: 908,
+      projectName: "sdsdsd"
+   }
+});
+
+
+</script>
+	
+	
+   
+  </body>
+</html>
